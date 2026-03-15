@@ -167,7 +167,7 @@
     chdir: "{{ xcaddy_build_dir }}"
   environment:
     GOPROXY: "{{ xcaddy_goproxy }}"
-    PATH: "/usr/local/go/bin:{{ ansible_env.PATH }}"
+    PATH: "/usr/local/go/bin:{{ ansible_facts.env.PATH }}"
   become: true
   register: xcaddy_build_result
   changed_when: true
